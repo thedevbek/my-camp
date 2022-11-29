@@ -1,13 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit Campground</title>
-</head>
-<body>
+<% layout('layouts/boilerplate')%>
+
 <h1>Edit Campground</h1>
 <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST">
     <div>
@@ -16,16 +8,11 @@
     </div>
     <div>
         <label for="location">Location</label>
-        <input type="text" id="location" name="campground[location]" value="<%=campground.location%>">>
+        <input type="text" id="location" name="campground[location]" value="<%=campground.location%>">
     </div>
-    <p>
         <button>Update Campground</button>
-    </p>
-
-    <p>
-        <a href="/campgrounds/<%= campground._id %>">Back to Campground</a>
-    </p>
-
 </form>
-</body>
-</html>
+    <a href="/campgrounds/<%= campground._id %>">Back to Campground</a>
+
+
+
